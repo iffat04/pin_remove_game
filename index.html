@@ -72,6 +72,12 @@
         0%   {background-color:red; left:130px; top:-300px;}
         100%  {background-color:yellow; left:130px; top:-360px;}
         }
+        #my_audio{
+            display: none;
+        }
+        #my_audio2{
+            display: none;
+        }
 
 
        
@@ -88,13 +94,24 @@
             <i class='fa fa-hand-o-left' id="icon2" style="font-size:48px; color:red; border-radius: 50%;"></i>
             <i class="fa fa-hand-o-up" id="icon3" style="font-size:48px;color:rgb(0, 255, 42); border-radius: 50%;"></i>
 
+
         </div>
+        <audio id="my_audio" controls>
+            <source src="levelUp.wav" type="audio/mpeg">
+      
+        </audio>
+        <audio id="my_audio2" controls>
+            <source src="game.wav" type="audio/mpeg">
+      
+        </audio>
       
     </div>
     
 
     <script>
         var vid = document.getElementById("myVideo"); 
+        var aid= document.getElementById("my_audio");
+        var game_over= document.getElementById("my_audio2");
         var i=1.5 ;
         var j=1;
         icon1  = document.getElementById('icon1');
@@ -103,6 +120,7 @@
 
         //vid.playbackRate = 0.5;
         function playVid() { 
+            aid.play();
             if(j==1){
                 icon1.style="display:none"
             }
@@ -130,6 +148,7 @@
         i=i+2.1;
         if(i>7.7){
             showLogo();
+            game_over.play();
         }
         } 
 
