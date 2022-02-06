@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
         .mygame{
@@ -23,6 +24,50 @@
             padding-top: 25px;
             padding-bottom: 25px;
         }
+        #icon1{
+           
+            position: relative;
+            animation-name: icon1_;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+            
+        }
+
+        @keyframes icon1_ {
+        0%   {background-color:red; left:10px; top:-40px; }
+        25%  {background-color:yellow; left:100px; top:-140px;}
+        }
+
+        #icon2{
+            width: 50%;
+            position: relative;
+            animation-name: icon2_;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+            display: none;
+        }
+
+        @keyframes icon2_ {
+        0%   {background-color:rgb(0, 255, 55); left:10px; top:-px;}
+        25%  {background-color:yellow; left:100px; top:-270px;}
+        }
+
+        #icon3{
+            width: 50%;
+            position: relative;
+            animation-name: icon3_;
+            animation-duration: 2s;
+            animation-iteration-count: 10;
+            display: none;
+        }
+
+        @keyframes icon3_ {
+        0%   {background-color:red; left:2px; top:-380px;}
+        25%  {background-color:yellow; left:10px; top:-380px;}
+        }
+
+
+       
     </style>
 </head>
 <body>
@@ -32,36 +77,64 @@
             <video id="myVideo" width="300" height="400">
                 <source src="pin.mp4" type="video/mp4" controls>
             </video>
-              
-        </div>
+            <i class="fa fa-hand-o-right" id="icon1" style="font-size:48px;color:red; border-radius: 50%;"></i>
+            <i class="fa fa-hand-o-right" id="icon2" style="font-size:48px;color:red; border-radius: 50%;"></i>
+            <i class="fa fa-hand-o-right" id="icon3" style="font-size:48px;color:rgb(0, 255, 42); border-radius: 50%;"></i>
 
+        </div>
+      
     </div>
     
 
     <script>
         var vid = document.getElementById("myVideo"); 
         var i=1.5 ;
+        var j=1;
+        icon1  = document.getElementById('icon1');
+        icon2  = document.getElementById('icon2');
+        icon3  = document.getElementById('icon3');
+
         //vid.playbackRate = 0.5;
         function playVid() { 
+            if(j==1){
+                icon1.style="display:none"
+            }
+            else if(j==2){
+                icon2.style="display:none"
+            }
+            else if(j==3){
+                icon3.style="display:none"
+            }    
         vid.play(); 
+
         } 
 
+
         function pauseVid() { 
+            j=j+1;
         vid.pause(); 
+        
+        if(j==2){
+                icon2.style="display:block"
+        }
+        else if(j==3){
+                icon3.style="display:block"
+        }
         i=i+2.1;
         if(i>7.7){
             showLogo();
         }
-        
         } 
+
         function showLogo(){
             
            document.getElementById("game_screen").innerHTML=
            "<img src=\"v2.png\" width=\"300px\" height=\"400px\">"
         }
     
-        document.getElementById('game_screen').addEventListener('click',()=>{
 
+        document.getElementById('game_screen').addEventListener('click',()=>{
+            
             playVid();
            
            vid.addEventListener("timeupdate", function(){  
