@@ -28,29 +28,35 @@
            
             position: relative;
             animation-name: icon1_;
-            animation-duration: 2s;
-            animation-iteration-count: 10;
+            animation-duration: 0.5s;
+            animation-iteration-count:60;
+            font-size:40px;
+            
+            height: 45px;
+            width: 45px;
+
             
         }
 
         @keyframes icon1_ {
-        0%   {background-color:rgb(255, 166, 0); left:100px; top:-80px; opacity:0; }
-        100%  {background-color:rgb(0, 255, 0); left:130px; top:-140px; opacity:1;}
+        0%   {left:150px; top:-95px; opacity:0; }
+        100%  { left:130px; top:-100px; opacity:1;}
         }
 
         #icon2{
             position: relative;
             animation-name: icon2_;
-            animation-duration: 2s;
-            animation-iteration-count: 10;
-            height: 10px;
-            width: 10px;
+            animation-duration: 0.5s;
+            animation-iteration-count: 60;
+            font-size: 40;
+            height: 45px;
+            width: 45px;
             display: none;
         }
 
         @keyframes icon2_ {
-        0%   { left:120px; top:-270px;}
-        100%  {background-color:yellow; left:160px; top:-270px;}
+        0%   { left:160px; top:-270px; opacity: 0;}
+        100%  { left:150px; top:-266px; opacity: 1;}
         }
 
         
@@ -61,16 +67,16 @@
         #icon3{
             position: relative;
             animation-name: icon3_;
-            animation-duration: 2s;
-            animation-iteration-count: 10;
+            animation-duration: 0.5s;
+            animation-iteration-count: 40;
             display: none;
             height: 45px;
             width: 45px;
         }
 
         @keyframes icon3_ {
-        0%   {background-color:red; left:130px; top:-300px;}
-        100%  {background-color:yellow; left:130px; top:-360px;}
+        0%   { left:140px; top:-300px;opacity: 0;}
+        100%  { left:130px; top:-305px;opacity: 1;}
         }
         #my_audio{
             display: none;
@@ -90,9 +96,14 @@
             <video id="myVideo" width="300" height="400">
                 <source src="pin.mp4" type="video/mp4" controls>
             </video>
+            <!--
             <i class="fa fa-hand-o-right" id="icon1" style="font-size:48px;color:red; border-radius: 50%;"></i>
             <i class='fa fa-hand-o-left' id="icon2" style="font-size:48px; color:red; border-radius: 50%;"></i>
             <i class="fa fa-hand-o-up" id="icon3" style="font-size:48px;color:rgb(0, 255, 42); border-radius: 50%;"></i>
+            -->
+            <img src="hand-bend.png" alt="" id="icon1" ></img>
+            <img src="hand-bend.png" alt="" id="icon2" ></img>
+            <img src="hand-bend.png" alt="" id="icon3" ></img>
 
 
         </div>
@@ -140,10 +151,10 @@
         vid.pause(); 
         
         if(j==2){
-                icon2.style="display:block; border-radius:5px; font-size:48px; color:green"
+                icon2.style="display:block; font-size:40px;"
         }
         else if(j==3){
-                icon3.style="display:block; border-radius:20px; font-size:40px; color:green"
+                icon3.style="display:block;  font-size:40px;"
         }
         i=i+2.1;
         if(i>7.7){
