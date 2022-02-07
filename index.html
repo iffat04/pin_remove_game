@@ -39,8 +39,8 @@
         }
 
         @keyframes icon1_ {
-        0%   {left:150px; top:-95px; opacity:0; }
-        100%  { left:130px; top:-100px; opacity:1;}
+        0%   {left:205px; top:-164px; opacity:0; width: 45px; height: 45px; }
+        100%  { left:200px; top:-170px; opacity:1; width: 35px; height: 35px;}
         }
 
         #icon2{
@@ -55,8 +55,8 @@
         }
 
         @keyframes icon2_ {
-        0%   { left:160px; top:-270px; opacity: 0;}
-        100%  { left:150px; top:-266px; opacity: 1;}
+        0%   { left:205px; top:-272px; opacity: 0;}
+        100%  { left:200px; top:-269px; opacity: 1;width: 35px; height: 35px; }
         }
 
         
@@ -75,8 +75,8 @@
         }
 
         @keyframes icon3_ {
-        0%   { left:140px; top:-300px;opacity: 0;}
-        100%  { left:130px; top:-305px;opacity: 1;}
+        0%   { left:140px; top:-385px;opacity: 0;}
+        100%  { left:130px; top:-390px;opacity: 1; width: 35px; height: 35px; }
         }
         #my_audio{
             display: none;
@@ -132,6 +132,8 @@
         //vid.playbackRate = 0.5;
         function playVid() { 
             aid.play();
+            vid.play(); 
+
             if(j==1){
                 icon1.style="display:none"
             }
@@ -141,7 +143,7 @@
             else if(j==3){
                 icon3.style="display:none"
             }    
-        vid.play(); 
+        //vid.play(); 
 
         } 
 
